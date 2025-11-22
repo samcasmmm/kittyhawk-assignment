@@ -4,23 +4,18 @@ interface AppError extends Error {
   status?: number;
 }
 
-export const notFound = (req: Request, _res: Response, next: NextFunction) => {
-  const error: AppError = new Error(`Not found - ${req.originalUrl}`);
+export const notFound = (req: any, _res: any, next: any) => {
+  const error: AppError = new Error(`Not found - ${(req as any).originalUrl}`);
   error.status = 404;
   next(error);
 };
 
-export const errorHandler = (
-  err: AppError,
-  req: Request,
-  res: Response,
-  _next: NextFunction
-) => {
+export const errorHandler = (err: AppError, req: any, res: any, _next: any) => {
   const statusCode =
     err.status && err.status !== 200
       ? err.status
-      : res.statusCode !== 200 && res.statusCode !== 0
-      ? res.statusCode
+      : (res as any).statusCode !== 200 && (res as any).statusCode !== 0
+      ? (res as any).statusCode
       : 500;
 
   (res as any).build
@@ -28,8 +23,8 @@ export const errorHandler = (
     .withMessage(err.message || 'Internal Server Error')
     .withData(null)
     .withExtra({
-      path: req.originalUrl,
-      method: req.method,
+      path: (req as any).originalUrl,
+      method: (req as any).method,
     })
     .send();
 };

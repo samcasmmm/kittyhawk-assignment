@@ -49,7 +49,7 @@ class ResponseBuilder {
     if (this.extra !== null && this.extra !== undefined) {
       body.extra = this.extra;
     }
-    this.res.status(this.statusCode).json(body);
+    (this.res as any).status(this.statusCode).json(body);
   }
 }
 
