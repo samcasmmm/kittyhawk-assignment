@@ -22,8 +22,7 @@
       "@/middleware/*": ["middleware/*"],
       "@/utils/*": ["utils/*"]
     },
-    "declaration": true,
-    "declarationMap": true,
+    "declaration": false,
     "sourceMap": true
   },
   "include": ["src/**/*"],
