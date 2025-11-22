@@ -57,8 +57,8 @@ export function ResponseBuilderMiddleware(
   _req: Request,
   res: Response,
   next: NextFunction
-): void {
-  res.build = new ResponseBuilder(res);
+) {
+  (res as any).build = new ResponseBuilder(res);
   next();
 }
 
