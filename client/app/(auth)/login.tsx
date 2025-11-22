@@ -12,8 +12,8 @@ import { KeyboardAvoidView } from '@/components/ui/KeyboardAvoidView';
 import { showToast } from '@/modules/toast';
 
 export default function LoginScreen() {
-  const [email, setEmail] = useState('sam@mail.com');
-  const [password, setPassword] = useState('admin12');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   const loginMutation = useMutation({
