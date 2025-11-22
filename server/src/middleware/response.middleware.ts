@@ -53,12 +53,8 @@ class ResponseBuilder {
   }
 }
 
-export function ResponseBuilderMiddleware(
-  _req: Request,
-  res: Response,
-  next: NextFunction
-) {
-  (res as any).build = new ResponseBuilder(res);
+export function ResponseBuilderMiddleware(_req: any, res: any, next: any) {
+  res.build = new ResponseBuilder(res);
   next();
 }
 
