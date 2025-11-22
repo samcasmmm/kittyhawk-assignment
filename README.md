@@ -61,3 +61,16 @@ cd KittyHawk
 
 - `client/`: Contains the React Native frontend code.
 - `server/`: Contains the Node.js backend code.
+
+
+- `some screenshots` 
+
+[Login](https://github.com/samcasmmm/kittyhawk-assignment/blob/main/screenshots/Screenshot_2025-11-23-04-44-03-677_host.exp.exponent.jpg)
+
+[Dashboard](https://github.com/samcasmmm/kittyhawk-assignment/blob/main/screenshots/Screenshot_2025-11-23-04-44-19-660_host.exp.exponent.jpg)
+
+[Add Todo](https://github.com/samcasmmm/kittyhawk-assignment/blob/main/screenshots/Screenshot_2025-11-23-04-44-48-011_host.exp.exponent.jpg)
+
+[My Account](https://github.com/samcasmmm/kittyhawk-assignment/blob/main/screenshots/Screenshot_2025-11-23-04-44-22-496_host.exp.exponent.jpg)
+
+[After adding new task](https://github.com/samcasmmm/kittyhawk-assignment/blob/main/screenshots/Screenshot_2025-11-23-04-45-00-966_host.exp.exponent.jpg)
