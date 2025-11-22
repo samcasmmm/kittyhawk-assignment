@@ -1,20 +1,25 @@
-import { error } from 'console';
 import { Request, Response, NextFunction } from 'express';
 
-const notFound = (req: Request, _res: Response, next: NextFunction) => {
+interface AppError extends Error {
+  status?: number;
+}
+
+export const notFound = (
+  req: Request,
+  _res: Response,
+  next: NextFunction
+): void => {
   const error: AppError = new Error(`Not found - ${req.originalUrl}`);
   error.status = 404;
   next(error);
 };
 
-type AppError = Error & { status?: number };
-
-const errorHandler = (
+export const errorHandler = (
   err: AppError,
   req: Request,
   res: Response,
   _next: NextFunction
-) => {
+): void => {
   const statusCode =
     err.status && err.status !== 200
       ? err.status
@@ -32,5 +37,3 @@ const errorHandler = (
     })
     .send();
 };
-
-export { notFound, errorHandler };

@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
+// Extend Express Response type
 declare global {
   namespace Express {
     interface Response {
@@ -52,11 +53,11 @@ class ResponseBuilder {
   }
 }
 
-function ResponseBuilderMiddleware(
+export function ResponseBuilderMiddleware(
   _req: Request,
   res: Response,
   next: NextFunction
-) {
+): void {
   res.build = new ResponseBuilder(res);
   next();
 }
